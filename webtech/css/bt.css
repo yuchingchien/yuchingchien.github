@@ -1,0 +1,50 @@
+.jumbotron{
+    color:white;
+    font-family:
+        'Playfair Display',
+        "Lucida Grande",
+        Helvetica,
+        "Helvetica Neue",
+        "HelveticaNeue-Light",
+        "Helvetica Neue Light",
+        Arial,
+        sans-serif;
+    background-image: url("https://i.pinimg.com/564x/12/67/d8/1267d83c3d9638283e5aeb4e8f832e7f.jpg");
+    background-size: cover;
+    background-position: 0% 50%;
+    /* background-repeat: no-repeat; */
+    height: 50vh;
+    /* vh; viewport height */
+    margin-bottom: 0px;
+}
+#nav li{
+    display:block;
+    background-color: rgb(51, 204, 204);
+    padding: 2px;
+    margin: 5px;
+    text-align: center;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);
+    border: 2px solid white;
+    border-radius:20px ; 
+} /* 視覺化修改 #nav後面的div ul可省略/border-radius也可以寫%數 */
+#nav li:hover{
+    background-color: rgb(255, 166, 132);
+}
+#nav ul{
+    padding-left:  0px; ;
+}
+#nav li a{
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+}
+#nav li a:hover{
+    color:whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body{
+    font-family:
+    serif;
+}
