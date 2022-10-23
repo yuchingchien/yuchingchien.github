@@ -1,22 +1,4 @@
-.jumbotron{
-    color:white;
-    font-family:
-        'Playfair Display',
-        "Lucida Grande",
-        Helvetica,
-        "Helvetica Neue",
-        "HelveticaNeue-Light",
-        "Helvetica Neue Light",
-        Arial,
-        sans-serif;
-    background-image: url("https://i.pinimg.com/564x/12/67/d8/1267d83c3d9638283e5aeb4e8f832e7f.jpg");
-    background-size: cover;
-    background-position: 0% 50%;
-    /* background-repeat: no-repeat; */
-    height: 50vh;
-    /* vh; viewport height */
-    margin-bottom: 0px;
-}
+
 body{
     font-family:
     serif;
