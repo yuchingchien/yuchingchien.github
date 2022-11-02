@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .slideanimate {
+            width: 100%;
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div style="height:100vh;background-color:royalblue"></div>
+
+    <div>
+        <!-- 記得是要用class而不是id，不然沒辦法一個風格套用在每個圖片上，把class都改成slideanumate，代表四張圖都要套用一樣的效果-->
+        <img class="slideanimate" src="https://p4css.github.io/webScroll/assets/taipei-1.jpg" />
+        <img class="slideanimate" src="https://p4css.github.io/webScroll/assets/taipei-2.jpg" />
+        <img class="slideanimate" src="https://p4css.github.io/webScroll/assets/taipei-3.jpg" />
+        <img class="slideanimate" src="https://p4css.github.io/webScroll/assets/taipei-4.jpg" />
+    </div>
+    
+    <div style="height:100vh;background-color:gray"></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+        var winh = $(window).height();
+        $(window).scroll(function () {
+            //.each代表每一個物件都要套用那個效果
+            $(".slideanimate").each(function () {
+                var scrolled = $(window).scrollTop();
+                //可以用this來代表「當下」取得的那個物件的位置
+                var objpos = $(this).offset().top;
+                if (objpos < scrolled + winh * 0.8) {
+                    //這邊記得也要用this代表當下的那個物件
+                    $(this).addClass("slide");
+                }
+            });
+        });
+    });
+
+  </script>
+
+
+
+  </body>
+</html>

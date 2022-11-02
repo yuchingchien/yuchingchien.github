@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>trigger keyframe pic</title>
+    <style>
+    /* 下面這邊要寫img而不是img1不然會跑不出來 */
+    img {
+        width: 100%;
+        /* hidden可以讓img1一開始是看不到的、 */
+        visibility: hidden;
+    }
+    
+    .slide {
+        animation-name: slide;
+        animation-duration: 1s;
+        visibility: visible;
+    }
+    
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            transform: translateY(70%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+    </style>
+    
+  </head>
+  <body>
+    <div style="height:100vh;background-color:rgba(174, 161, 161, 0.788)"></div>
+
+    <div>
+        <img id="img1" alt="img1" src="https://i.pinimg.com/564x/1a/74/75/1a7475e021f96d0ecc93c531ca9103c3.jpg" />
+    </div>
+    
+    <div style="height:100vh;background-color:gray"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                var scrolled = $(window).scrollTop();
+                var winh = $(window).height();
+                // 下面這行代表只要objpos超過某個高度，就會apply img1的animation
+                var objpos = $("#img1").offset().top;
+                if (objpos < scrolled + winh * 0.8) {
+                    $("#img1").addClass("slide");
+                }
+            });
+        });
+        //如果要apply要用一樣的動畫方式（請見下一章節）
+
+    </script>
+    
+    </body>
+</html>
