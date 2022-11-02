@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div style="height:100vh; background-color:royalblue;"></div>
+
+    <div id="v1frame" style="height:1000vh;">
+        <!-- 記得先在外層做sticky-top 裡面放影片(src=source)還有設定viewport width -->
+        <div class="sticky-top" style="z-index:-1">
+            <video id="video1" src="https://web.cw.com.tw/climate-2020/landing/cover.mp4" style="width:100vw;"></video>
+        </div>
+        <div class="row" style="height:100vh">
+            <div class="col-6"></div>
+            <div class="col-6" style="height:100vh;background-color:rgba(0,0,0,0.5);"></div>
+        </div>
+    </div>
+    <!-- 下面這行是footer -->
+    <div style="height:100vh;background:grey;"></div>
+    
+    <div id="v2frame" style="height:1000vh">
+        <div class="sticky-top">
+            <video id="video2" src="https://web.cw.com.tw/climate-2020/deforestation/cover.mp4" style="width:100vw;"></video>
+        </div>
+    </div>
+    <div style="height:100vh;background:grey;"></div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script>
+    $(document).ready(function () {
+        // 用下面這行函式設定第一段影片是會碰到上緣才開始播放
+	    var video1_pos = $("#video1").offset().top;
+	    var video2_pos = $("#video2").offset().top;
+        //+ $("#v1frame").height()的意思是：加上v1frame的高度
+	    var video1_end = $("#video1").offset().top + $("#v1frame").height();
+	    var video2_end = $("#video2").offset().top + $("#v2frame").height();
+	    console.log(video1_end);
+	    $(window).scroll(function () {
+		var scroll = $(window).scrollTop();
+		console.log(scroll);
+		var winh = $(window).height();
+        //&&是而且的意思，下面這行是讓他到最下緣的時候不要再動了
+		if(scroll > video1_pos && scroll < video1_end){
+			$("#video1")[0].play();
+		}else {
+			$("#video1")[0].pause();
+		}
+		if(scroll > video2_pos && scroll < video2_end){
+			$("#video2")[0].play();
+		}else {
+			$("#video2")[0].pause();
+		}
+
+	    });
+    });
+    </script>
+  </body>
+</html>

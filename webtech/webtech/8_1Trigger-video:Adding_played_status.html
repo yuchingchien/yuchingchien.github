@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- BANNER -->
+    <div style="height:100vh; background-color:royalblue;"></div>
+
+
+    <!-- Video01  -->
+    <div style="height:1000vh;">
+        <div class="sticky-top">
+            <video id="video1" src="https://github.com/P4CSS/webScroll/raw/main/mov/forward.mp4" style="width:100vw"></video>
+        </div>
+    </div>
+    <div style="height:100vh;background:grey;"></div>
+
+
+    <!-- Video 02 -->
+    <div style="height:1000vh">
+        <div class="sticky-top">
+            <video id="video2" src="https://github.com/P4CSS/webScroll/raw/main/mov/backward.mp4" style="width:100vw"></video>
+        </div>
+    </div>
+    <div style="height:100vh;background:grey;"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function () {
+        // 變數
+        var video1 = $("#video1");
+        var video2 = $("#video2");
+        var video1_pos = video1.offset().top;
+        var video2_pos = video2.offset().top;
+        // <div style="height:1000vh;">是指第一個parent，而這個div裡面的<div>(<div class="sticky-top"...>是第二個div)
+        var video1_end = video1.offset().top + video1.parent().parent().height();
+        var video2_end = video2.offset().top + video2.parent().parent().height();
+        
+        $(window).scroll(function () {
+            var scrolled = $(window).scrollTop();
+            //下面這串if是用來控制影片只播放一次，！是指not
+            if (scrolled > video1_pos && scrolled < video1_end && !video1.hasClass("played")) {
+                video1.get(0).play();
+                video1.addClass("played");
+            }
+            if(scrolled == 0 && video1.hasClass("played")){
+                video1.removeClass("played");
+                video1.on("end", function(){
+                    //currentTime設定為零的話，可以讓影片從最一開始播放（而不是先看到播完的樣子，開始捲動時才從頭播放）
+                    video1.currentTime = 0;	
+                });
+            }
+            
+            if (scrolled > video2_pos && scrolled < video2_end && !video2.hasClass("played")) {
+                video2.get(0).play();
+                video2.addClass("played");
+            }
+            if(scrolled == 0 && video2.hasClass("played")){
+                video2.removeClass("played");
+                video2.on("end", function(){
+                    video2.currentTime = 0;	
+                });
+                
+            }
+    
+        });
+    });
+    </script>
+    
+ </body>
+</html>
