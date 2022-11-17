@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>test</title>
+    <style>
+        .bardiv {
+            position: relative;
+            height: 25px;
+            width: 250px;
+            left: 0;
+            background-color: dodgerblue;
+            color: white;
+        }
+        
+        .animatebar div:not(.slide) {
+            /* opacity:0代表一開始是看不見的 */
+            opacity: 0;
+        }
+        
+        .slide {
+            animation-name: slide;
+            animation-duration: 1s;
+            visibility: visible;
+        }
+        
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: scaleX(0);
+                /* 記得transform-origin要設定為left center（由左到右展開），不然長條圖會變成做從中心左右展開，很奇怪 */
+                transform-origin: left center;
+            }
+        
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+                transform-origin: left center;
+            }
+        }
+    </style>
+    
+  </head>
+  <body>
+    <div style="position:fixed;top:50vh;width:100%;background-color:red;height:1px;z-index:10"></div>
+    <div style="position:fixed;top:80vh;width:100%;background-color:red;height:1px;z-index:10"></div>
+    
+    <div style="min-height: 100vh;background-color: dodgerblue;color:white;">
+        <h1>Animating Chart by Keyframe</h1>
+    </div>
+    
+    <div style="height:100vh;">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>全球最高日本動畫電影票房</h1>
+            </div>
+            <div class="col-md-8 animatebar"> 
+                <!--    animate下面的bar有3個div -->
+                <div class="text-right bardiv" style="top:0px;width:712px">君の名は(2016):356M</div>
+                <div class="text-right bardiv" style="top:30px;width:578px">千と千尋の神隠し(2001):289M</div>
+                <div class="text-right bardiv" style="top:60px;width:470px">ハウルの動く城(2004):235M</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="jumbotron" style="min-height: 500px;background-color: gray;color:white;border-radius:0;"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var scrolled = $(window).scrollTop();
+                var winh = $(window).height();
+                //這裡就能偵測每一個的bar的位置
+                $(".animatebar").each(function () {
+                    var objpos = $(this).offset().top;
+                    if (objpos - winh * 0.5 < scrolled) {
+                        $(this).children().addClass("slide");
+                    }
+                    //if (scrolled == 0)代表如果使用者捲回去最上面的話 ==是等於的意思
+                    if (scrolled == 0) {
+                        //this的功能就是讓class裡的bar的能套用相同動畫
+                        $(this).children().removeClass("slide");
+                    }
+                });
+            });
+        });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* .square代表連接id="suare" 希望呈現出來會是一個小方塊 */
+        .square {
+            background-color: beige;
+            border: 1px solid darkgrey;
+            border-radius: 10%;
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            /* 希望會呈現一排（由左而右） */
+            float: left;
+            /* box-shadow的數值1px(往右) 1px(往下) 3px(模糊程度)rbga(o,o,o,o.3)那個0.3代表的是透明程度 */
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        /* 可以在這裡調整位置 */
+        .butterfly {
+            width: 50px;
+            margin: 5px;
+            float: left;
+            transition: all 1s;
+        }
+        /* 希望顏色會改變 所以要做hover，而這裡不能用random color,可用filter，但是給一張圖片用 */
+        .butterfly:hover {
+            filter: invert(46%) sepia(28%) saturate(5862%) hue-rotate(164deg)
+                brightness(99%) contrast(103%);
+            /* transform: rotate(0.1turn);*/
+            /* transition:變化過程 */
+        }
+    </style>
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- 直接開始畫 -->
+    <div id="square"></div>
+    <div style="background-color:gold;height:50vh;clear:both">
+        <h1>Butterfly generator</h1>
+        <p><a href="https://codepen.io/sosuke/pen/Pjoqqp">Convert RGB color to CSS filter</a></p>
+    </div>
+    <div id="butterfly"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        //i從0開始、i小於100，代表會執行100次，i++代表遞增，就會有100個東西
+        for (i = 0; i < 100; i++) {
+            // random_color 隨機顏色
+            var random_color =
+                "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
+            $("#square").append(
+                "<div class='square' style='background-color:" + random_color + "'></div>"
+                //style='background-color:" + random_color +顏色變成隨機
+            );
+        }
+
+        for (i = 0; i < 100; i++) {
+            //這邊是將每隻蝴蝶做些改變，不要每隻都並排站。Math.floor代表去除小數（無條件捨去）
+            var rotate = Math.floor(Math.random() * 180 - 90);
+            //想要位移的量可以在這裡調整 (改40那裡)
+            var tx = Math.floor(Math.random() * 40 - 2);
+            $("#butterfly").append(
+                //記得rotate就是塞在下面這串
+                "<img class='butterfly' src='https://p4css.github.io/webScroll/assets/butterfly.png' style='transform:rotate(" +
+                    rotate +
+                    //但還時覺得太整齊 所以家下面這串“tx代表位移”
+                    "deg) translateX(" +
+                    tx +
+                    "px)'>"
+            );
+        }
+    </script>
+  </body>
+</html>

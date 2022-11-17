@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>as07</title>
+    <style>
+        #horizontal {
+            position: relative;
+            display: inline-block;
+            left: 0px;
+        }
+        body {
+            overflow-x: hidden;
+        }
+
+        .slideanimate {
+            width: 100%;
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        
+
+    </style>
+
+  </head>
+  <body>
+    <!-- the first design -->
+    <div style="height:100vh;background:rgb(255, 240, 141)"></div>
+    <div id="hframe" style="height:1000vh">
+        <div class="sticky-top">
+            <div id="horizontal">
+                <img src="https://pic.616pic.com/bg_w1180/00/16/59/ko7mgQKlwU.jpg" style="height:100vh;width:auto" />
+            </div>
+        </div>
+    </div>
+    <div style="height:300vh;"></div>
+
+    <!-- the second design -->
+    <div style="height:100vh;background:rgb(108, 206, 255)"></div>
+    <div>
+        <img class="slideanimate" src="https://i.pinimg.com/564x/52/42/63/5242637f8b864f0bc35e8521c0bea347.jpg" />
+        <img class="slideanimate" src="https://i.pinimg.com/564x/5c/6d/47/5c6d4738cd1587b5dc829f6cd3d57c28.jpg" />
+        <img class="slideanimate" src="https://i.pinimg.com/564x/33/3d/64/333d64535408e16ff68ae7d84d89907c.jpg" />
+        <img class="slideanimate" src="https://i.pinimg.com/736x/10/8f/95/108f95168cd095671e2aa79e88704662.jpg" />
+    </div>
+    
+     <!-- the third design -->
+    <div style="height:100vh;background:rgb(255, 187, 254)"></div>
+    
+     <!-- Video01  -->
+     <div style="height:1000vh;">
+        <div class="sticky-top">
+            <video id="video1" src="https://github.com/P4CSS/webScroll/raw/main/mov/forward.mp4" style="width:100vw"></video>
+        </div>
+    </div>
+    <div style="height:100vh;background:grey;"></div>
+
+    <!-- Video 02 -->
+    <div style="height:1000vh">
+        <div class="sticky-top">
+            <video id="video2" src="https://github.com/P4CSS/webScroll/raw/main/mov/backward.mp4" style="width:100vw"></video>
+        </div>
+    </div>
+    <div style="height:100vh;background:grey;"></div>
+    
+    <div style="height:100vh;background:rgb(163, 255, 189);"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            var h_pos = $("#horizontal").offset().top;
+            var hframe_h = $("#hframe").height();
+            var winh = $(window).height();
+            var max_scroll = $(document).height() - $(window).height();
+            var max_w = $("#horizontal").width() - $(window).width();
+            var video1 = $("#video1");
+            var video2 = $("#video2");
+            var video1_pos = video1.offset().top;
+            var video2_pos = video2.offset().top;
+            // <div style="height:1000vh;">是指第一個parent，而這個div裡面的<div>(<div class="sticky-top"...>是第二個div)
+            var video1_end = video1.offset().top + video1.parent().parent().height();
+            var video2_end = video2.offset().top + video2.parent().parent().height();
+
+            $(window).on("resize", function () {
+                winh = $(window).height();
+                max_scroll = $(document).height() - $(window).height();
+                max_w = $("#horizontal").width() - $(window).width();
+            });
+            $(window).scroll(function () {
+                var scrolled = $(window).scrollTop();
+                if (scrolled > h_pos && scrolled < h_pos + hframe_h - winh) {
+                    var new_left = -1 * max_w * ((scrolled - h_pos) / (hframe_h - winh));
+                    $("#horizontal").css({
+                        left: new_left
+                    });
+                }
+                $(".slideanimate").each(function () {
+                    var objpos = $(this).offset().top;
+                    if (objpos < scrolled + winh * 0.8) {
+                        $(this).addClass("slide");
+                    }
+                });
+
+                if (scrolled > video1_pos && scrolled < video1_end && !video1.hasClass("played")) {
+                video1.get(0).play();
+                video1.addClass("played");
+                }
+                if(scrolled == 0 && video1.hasClass("played")){
+                    video1.removeClass("played");
+                    video1.on("end", function(){
+                        //currentTime設定為零的話，可以讓影片從最一開始播放（而不是先看到播完的樣子，開始捲動時才從頭播放）
+                        video1.currentTime = 0;	
+                    });
+                }
+            
+                if (scrolled > video2_pos && scrolled < video2_end && !video2.hasClass("played")) {
+                    video2.get(0).play();
+                    video2.addClass("played");
+                }
+                if(scrolled == 0 && video2.hasClass("played")){
+                    video2.removeClass("played");
+                    video2.on("end", function(){
+                        video2.currentTime = 0;	
+                    });
+                    
+                }
+            });
+        });
+
+
+
+    </script>
+  </body>
+</html>
