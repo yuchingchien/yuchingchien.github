@@ -1,0 +1,373 @@
+/* 整體 */
+body{
+    font-family:
+    serif;
+    background-color: #efefef;
+}
+
+p{
+    padding: 10px;
+    letter-spacing: 0.2em;
+  }
+
+#word{
+    margin-left: 25%;
+    margin-right: 25%;
+
+}
+
+
+
+/* Section 0 動畫 */
+#banner1{
+    background-image: url("https://kj1106.github.io/web/final/00_new_gray_bg.png");
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.friend{
+  width:40%;
+  animation-name: friend;
+  animation-duration: 1.5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes friend {
+  0%   {left:75%; top:60%}
+  100% {left:60%; top:30%}
+} 
+
+.costume{
+    width: 40%;
+    animation-name: costume;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  
+}
+@keyframes costume {
+    0%   {left:35%; top:70%}
+    100% {left:35%; top:50%}
+} 
+
+.farmer{
+    width: 40%;
+    animation-name: farmer;
+    animation-duration: 1.5s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes farmer {
+    0%   {left:-10%; top:35%}
+    100% {left:10%; top:35%}
+} 
+
+.flag {
+    width: 40%;
+    /* display: inline-block; */
+    /* margin: 0 0.5rem; */
+    animation: tada; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    /* animation-delay: 3s; */
+    animation-iteration-count: infinite;
+    margin-left: 30%;
+    z-index: 4;
+}
+
+
+
+.friend_word {
+    width: 50%;
+    /* display: inline-block; */
+    /* margin: 0 0.5rem; */
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    /* animation-delay: 3s; */
+    animation-iteration-count: infinite;
+    margin-left: 30%;
+    margin-top: 10%;
+    z-index: 4;
+}
+
+.farmer_word {
+    width: 50%;
+    /* display: inline-block; */
+    /* margin: 0 0.5rem; */
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    /* animation-delay: 3s; */
+    animation-iteration-count: infinite;
+    margin-left: 10%;
+    margin-top: 10%;
+    z-index: 4;
+}
+
+.costume_word {
+    width: 50%;
+    /* display: inline-block; */
+    /* margin: 0 0.5rem; */
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    /* animation-delay: 3s; */
+    animation-iteration-count: infinite;
+    margin-left: 20%;
+    margin-top: 20%;
+    z-index: 4;
+}
+
+
+/* Section 1 */
+
+#parade{
+    margin-left: 20%;
+    margin-right: 20%;
+    /* margin: 100px auto;
+    width: 600px; */
+    font-family: serif;
+}
+
+/* Section 1 comic */
+.slideanimate {
+    width: 100%;
+    visibility: hidden;
+}
+
+.slide {
+    animation-name: slide;
+    animation-duration: 1s;
+    visibility: visible;
+
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+#comic1{
+    background-image: url("https://kj1106.github.io/web/final/comic/01_1-1_1.png");
+    background-position: center;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    height: 100vh;
+    
+}
+
+#sect1bg{
+    background-image: url("https://kj1106.github.io/web/final/draft/01_1-1-1.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    /*只寫到這邊的話，自己插入連結的那個img是跑不出來的，要加入下面這一行  */
+    height: 100vh;
+}
+
+#sect2bg{
+    background-image: url("https://kj1106.github.io/web/final/draft/01_1-1-2.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    height: 100vh;
+}
+
+.boy1{
+    width: 50%;
+    animation-name: boy1 ;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-direction: alternate;
+}
+@keyframes boy1 {
+    from {
+        transform: translateX(0%);
+      }
+    
+      to {
+        transform: translateX(15%);
+      }
+} 
+
+.cosdog{
+    width: 50%;
+    animation-name: cosdog;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes cosdog {
+    from {
+        transform: translateX(0%);
+      }
+    
+      to {
+        transform: translateX(15%);
+      }
+} 
+
+
+.main {
+    width: 40%;
+    animation: swing; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 3s; /* don't forget to set a duration! */
+    /* animation-delay: 3s; */
+    animation-iteration-count: infinite;
+    margin-left: 25%;
+    
+}
+
+
+
+/* Section 2 漫畫 */
+#section2bg{
+    background-image: url("https://kj1106.github.io/web/final/draft/02_1-2-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+}
+
+.boy2{
+    width: 70%;
+    animation-name: boy2 ;
+    animation-duration: 8s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    /* animation-direction: alternate; */
+}
+@keyframes boy2 {
+    from {
+        transform: translateX(0%);
+      }
+    
+      to {
+        transform: translateX(15%);
+      }
+} 
+
+.farmer2{
+    width: 70%;
+    animation-name: farmer2;
+    animation-duration: 8s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    margin-top: 15%;
+    /* animation-direction: alternate; */
+}
+
+@keyframes farmer2 {
+    from {
+        transform: translateX(50%);
+      }
+    
+      to {
+        transform: translateX(30%);
+      }
+} 
+
+
+
+/* Section 2 字卡 */
+
+#cardbg{
+    background-image: url(https://kj1106.github.io/web/final/00_new_gray_bg.png);
+    background-repeat: no-repeat;
+    font-size: 40px;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+
+.box{
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+    height:100vh;
+    perspective:1000px;
+}
+
+.card-container{
+    position:relative;
+    width:350px;
+    height:400px;
+}
+
+.card-container .cover,
+.card-container .back{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    border-radius:.6rem;
+    box-shadow:0 .2rem .5rem rgba(0,0,0,.18);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    font-size:18px;
+    backface-visibility:hidden;
+    transition:transform 1s ease-in-out;
+    background-color: white;
+}
+
+.card-container .cover{
+    background-color: white;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: 寬度 高度 */
+    background-size: auto;
+    transform:rotatey(0deg);
+    }
+    .card-container:hover .cover{
+    transform:rotateY(180deg)
+    }
+    .card-container .back{
+    transform:rotatey(-180deg);
+    }
+    .card-container:hover .back{
+    transform:rotateY(0deg);
+}
+
+/* Section 3 */
+/* Ending */
+#first {
+    background-image: url("https://kj1106.github.io/web/final/comic_ending.png");
+    min-height: 1200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    filter: grayscale(100%) blur(3px) 
+    /* 記得blur後面得數值是用px不是用％ */
+    
+}
+#second {
+    background-image: url("https://kj1106.github.io/web/final/comic_ending.png");
+    min-height: 1200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%; 
+}
+/* footer */
+.page-footer{
+    background-color:rgba(0, 0, 0, 0.2) ;
+}
