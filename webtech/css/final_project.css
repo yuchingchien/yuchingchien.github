@@ -2,7 +2,7 @@
 body{
     font-family:
     serif;
-    background-color: #efefef;
+    background-color: #f1f1f1;
 }
 
 p{
@@ -82,7 +82,7 @@ p{
 
 
 .friend_word {
-    width: 50%;
+    width: 45%;
     /* display: inline-block; */
     /* margin: 0 0.5rem; */
     animation: pulse; /* referring directly to the animation's @keyframe declaration */
@@ -95,7 +95,7 @@ p{
 }
 
 .farmer_word {
-    width: 50%;
+    width: 45%;
     /* display: inline-block; */
     /* margin: 0 0.5rem; */
     animation: pulse; /* referring directly to the animation's @keyframe declaration */
@@ -108,7 +108,7 @@ p{
 }
 
 .costume_word {
-    width: 50%;
+    width: 45%;
     /* display: inline-block; */
     /* margin: 0 0.5rem; */
     animation: pulse; /* referring directly to the animation's @keyframe declaration */
@@ -133,7 +133,7 @@ p{
 
 /* Section 1 comic */
 .slideanimate {
-    width: 100%;
+    width: 75%;
     visibility: hidden;
 }
 
@@ -182,13 +182,14 @@ p{
 }
 
 .boy1{
-    width: 50%;
+    width: 80%;
     animation-name: boy1 ;
     animation-duration: 3s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
     animation-direction: alternate;
+    margin-top: 5%;
 }
 @keyframes boy1 {
     from {
@@ -201,21 +202,22 @@ p{
 } 
 
 .cosdog{
-    width: 50%;
+    width: 80%;
     animation-name: cosdog;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    margin-top: -10%;
 }
 
 @keyframes cosdog {
     from {
-        transform: translateX(0%);
+        transform: translateX(10%);
       }
     
       to {
-        transform: translateX(15%);
+        transform: translateX(30%);
       }
 } 
 
@@ -223,8 +225,8 @@ p{
 .main {
     width: 40%;
     animation: swing; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 3s; /* don't forget to set a duration! */
-    /* animation-delay: 3s; */
+    animation-duration: 5s; /* don't forget to set a duration! */
+    animation-delay: 2s; 
     animation-iteration-count: infinite;
     margin-left: 25%;
     
@@ -242,41 +244,42 @@ p{
 }
 
 .boy2{
-    width: 70%;
+    width: 80%;
     animation-name: boy2 ;
     animation-duration: 8s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-delay: 2s;
+    margin-top: 2%;
     /* animation-direction: alternate; */
 }
 @keyframes boy2 {
     from {
-        transform: translateX(0%);
+        transform: translateX(10%);
       }
     
       to {
-        transform: translateX(15%);
+        transform: translateX(30%);
       }
 } 
 
 .farmer2{
-    width: 70%;
+    width: 80%;
     animation-name: farmer2;
     animation-duration: 8s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
-    margin-top: 15%;
+    margin-top: 10%;
     /* animation-direction: alternate; */
 }
 
 @keyframes farmer2 {
     from {
-        transform: translateX(50%);
+        transform: translateX(30%);
       }
     
       to {
-        transform: translateX(30%);
+        transform: translateX(10%);
       }
 } 
 
@@ -285,7 +288,7 @@ p{
 /* Section 2 字卡 */
 
 #cardbg{
-    background-image: url(https://kj1106.github.io/web/final/00_new_gray_bg.png);
+    background-image: url();
     background-repeat: no-repeat;
     font-size: 40px;
     background-size: cover;
@@ -349,7 +352,7 @@ p{
 /* Section 3 */
 /* Ending */
 #first {
-    background-image: url("https://kj1106.github.io/web/final/comic_ending.png");
+    background-image: url("https://kj1106.github.io/web/final/ending.png");
     min-height: 1200px;
     background-attachment: fixed;
     background-position: center;
@@ -360,7 +363,7 @@ p{
     
 }
 #second {
-    background-image: url("https://kj1106.github.io/web/final/comic_ending.png");
+    background-image: url("https://kj1106.github.io/web/final/ending.png");
     min-height: 1200px;
     background-attachment: fixed;
     background-position: center;
