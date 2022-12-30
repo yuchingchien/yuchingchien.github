@@ -132,54 +132,24 @@ p{
 }
 
 /* Section 1 comic */
-.slideanimate {
-    width: 75%;
-    visibility: hidden;
-}
-
-.slide {
-    animation-name: slide;
-    animation-duration: 1s;
-    visibility: visible;
-
-}
-
-@keyframes slide {
-    0% {
-        opacity: 0;
-        transform: translateY(70%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
-
-#comic1{
-    background-image: url("https://kj1106.github.io/web/final/comic/01_1-1_1.png");
+/* revised comic 1 */
+.img-wrapper {
+    position: relative;
+  }
+  
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
     background-repeat: no-repeat;
+    background-image: url(https://kj1106.github.io/web/final/comic/01_1-1_1.png);
     height: 100vh;
-    
-}
-
-#sect1bg{
-    background-image: url("https://kj1106.github.io/web/final/draft/01_1-1-1.png");
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    /*只寫到這邊的話，自己插入連結的那個img是跑不出來的，要加入下面這一行  */
-    height: 100vh;
-}
-
-#sect2bg{
-    background-image: url("https://kj1106.github.io/web/final/draft/01_1-1-2.png");
-    background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    height: 100vh;
-}
+  }
+  
 
 .boy1{
     width: 80%;
@@ -236,11 +206,12 @@ p{
 
 /* Section 2 漫畫 */
 #section2bg{
-    background-image: url("https://kj1106.github.io/web/final/draft/02_1-2-1.png");
+    background-image: url("https://kj1106.github.io/web/final/00_new_gray_bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh; 
+
 }
 
 .boy2{
@@ -287,13 +258,14 @@ p{
 
 /* Section 2 字卡 */
 
-#cardbg{
+#cardbg1, #cardbg2, #cardbg3, #cardbg4, #cardbg5, #cardbg6{
     background-image: url(https://kj1106.github.io/web/final/00_new_gray_bg.png);
     background-repeat: no-repeat;
     font-size: 40px;
     background-size: cover;
     background-position: center;
     height: 100vh;
+    background-attachment: fixed;
 }
 
 
