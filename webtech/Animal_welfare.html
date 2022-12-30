@@ -21,7 +21,7 @@
 <div style="height:500vh;" >
 <!-- style就不用寫在這裡了 直接寫在css那邊 -->
 <!-- 若是想要調整讀整觀看圖片的時間，可以把vh的數值條大，調越大就代表讀者要滑越多下才能滑完 -->
-    <div id="banner1" class="sticky-top">
+    <div id="banner1" class="sticky-top"style="overflow: hidden;">
         <div id="animalplay">
             <img class="friend" src="https://kj1106.github.io/web/final/opening/02_friend.png" style="position:absolute; z-index: 4;"  >
             <img class="costume" src="https://kj1106.github.io/web/final/opening/03_costume.png" style="position:absolute; z-index: 4">
@@ -31,7 +31,6 @@
     </div>
 </div>   
 
-<div style="height: 40vh; " ></div>  
 <div id="banner2" style="height:300vh ; ">
     <img class="friend_word" src="https://kj1106.github.io/web/final/opening/02_friend_with_dialogbox.png" style="position:relative; z-index: 4;"  >
     <img class="farmer_word" src="https://kj1106.github.io/web/final/opening/04_farm_with_dialogbox.png" style="position:relative; z-index: 4;"  >
@@ -39,22 +38,23 @@
 </div>
 
 
-<!-- Section 1 comic -->
-<div style="height: 20vh;" ></div> 
-<div style="height:250vh;" >
-    <div  id="comic1" class="sticky-top">
-        <img class="slideanimate" src="https://kj1106.github.io/web/final/comic/01_1-1_2.png" style="position:absolute; "/>
-    </div>
-</div>
-<div style="height:250vh;" >
-    <div  id="comic1" class="sticky-top">
-        <img class="slideanimate" src="https://kj1106.github.io/web/final/comic/01_1-1_3.png" style="position:absolute"/>
-    </div>
-</div>
-<div style="height:250vh;" >
-    <div  id="comic1" class="sticky-top">
-        <img class="slideanimate" src="https://kj1106.github.io/web/final/comic/01_1-1_4.png" style="position:absolute "/>
-    </div>
+<!-- Section 1 comic (revised) -->
+<div style="height: 15vh;" ></div> 
+<div class="img-wrapper">
+  <!--   背景   -->
+  <div class="bg"></div>
+  <!--   對話1   -->
+  <div>
+    <img src="https://kj1106.github.io/web/final/comic/01_1-1_2.png" alt="" style="width:70% ;">
+  </div>
+  <!--   對話2   -->
+  <div>
+    <img src="https://kj1106.github.io/web/final/comic/01_1-1_3.png" alt=""  style="width:70% ;">
+  </div>
+  <!--   對話3   -->
+  <div>
+    <img src="https://kj1106.github.io/web/final/comic/01_1-1_4.png" alt="" style="width:70% ;">
+  </div>
 </div>
 
 <div style="height: 20vh; margin-top: 5%; " >
@@ -64,6 +64,8 @@
     </span> 
   </div>
 </div>    
+
+
  
 
 <!-- Section 1 大事紀-->
@@ -79,7 +81,7 @@
     </span> 
 </div>
     <!-- Section 1 漫畫 -->
-    <div id="comic1_2">
+    <div id="comic1_2" style="overflow: hidden;">
         <img class="boy1" src="https://kj1106.github.io/web/final/comic/02_1-2_1word.png"  alt="一張圖片"  >
         <img class="cosdog" src="https://kj1106.github.io/web/final/comic/02_1-2_2word.png"  alt="一張圖片"  >
     </div>
@@ -118,7 +120,7 @@
         }}})()</script>
     </div>
 
-    <div class="text-center">
+    <div class="text-center" style="overflow: hidden;">
         <img class="main" src="https://kj1106.github.io/web/final/opening/01_main.png"  alt="一張圖片" >
     </div>
     <div style="height: 20vh; margin-top: 5%; " >
@@ -132,7 +134,7 @@
     <div style="height:500vh;" >
     <!-- style就不用寫在這裡了 直接寫在css那邊 -->
     <!-- 若是想要調整讀整觀看圖片的時間，可以把vh的數值條大，調越大就代表讀者要滑越多下才能滑完 -->
-        <div id="banner1" class="sticky-top">
+        <div id="banner1" class="sticky-top" style="overflow: hidden;">
             <div id="animalplay">
                 <img class="boy2" src="https://kj1106.github.io/web/final/comic/03_S1%20to%20S2_1word.png" style="position:absolute;"  >
                 <img class="farmer2" src="https://kj1106.github.io/web/final/comic/03_S1%20to%20S2_2word.png" style="position:absolute; ">
@@ -171,7 +173,7 @@
 
     <!-- 1 飲食區 -->
     <div style="height:300vh;" >
-    <div id="cardbg" class="sticky-top">
+    <div id="cardbg1" class="sticky-top">
         <div class="box">
           <div class="dietcard">
             <div class="heading">飲食</div>
@@ -194,9 +196,8 @@
 </div>
 
 <!-- 2 穿搭區 -->
-<div style="height: 15vh;" ></div> 
   <div style="height:300vh;" >
-    <div id="cardbg" class="sticky-top" >
+    <div id="cardbg2" class="sticky-top" >
         <div class="box">
           <div class="outfitcard">
             <div class="heading ">服裝</div>
@@ -218,9 +219,8 @@
     </div>
  </div>
  <!-- 3 醫療區 -->
- <div style="height: 15vh;" ></div> 
   <div style="height:300vh;" >
-    <div id="cardbg" class="sticky-top" >
+    <div id="cardbg3" class="sticky-top" >
         <div class="box">
           <div class="dietcard">
             <div class="heading">醫療</div>
@@ -241,10 +241,9 @@
      </div>
    </div>
 </div>
-<!-- 4 娛樂區 -->
-<div style="height: 15vh;" ></div> 
+<!-- 4 娛樂區 --> 
   <div style="height:300vh;" >
-    <div id="cardbg" class="sticky-top" >
+    <div id="cardbg4" class="sticky-top" >
         <div class="box">
           <div class="dietcard">
             <div class="heading" >娛樂</div>
@@ -266,9 +265,8 @@
    </div>
 </div>
 <!-- 5 生活區 -->
-<div style="height: 15vh;" ></div> 
   <div style="height:300vh;" >
-    <div id="cardbg" class="sticky-top" >
+    <div id="cardbg5" class="sticky-top" >
         <div class="box">
           <div class="dietcard">
             <div class="heading">生活</div>
@@ -290,9 +288,8 @@
    </div>
 </div>
 <!-- 環境區 -->
-<div style="height: 15vh;" ></div> 
   <div style="height:300vh;" >
-    <div id="cardbg" class="sticky-top" >
+    <div id="cardbg6" class="sticky-top" >
         <div class="box">
           <div class="dietcard">
             <div class="heading">環境</div>
@@ -383,7 +380,7 @@
             </span>
             <span  style='line-height: 30px;font-size:18px;'  class="text-left">
             <p>動保入憲是從最根本及最實際的層面帶動動物權在社會中的問題意識，在憲法的保障下，能夠使中央政府機關、地方政府受到約束而推動動保相關法條，也能進一步導正目前動保法定義不明、有許多灰色地帶的問題。</p>
-            <p>林智傑先生更是無奈地提到，若想改變整個環境需有大量資金的投注。且認證標準不一、品質良莠不齊、風險管理都是現行體制下需要努力的方向。而他也認為在動保入憲後能改善現況，有助他持續推廣動物福利的理念。</p>
+            <p>林智傑更是無奈地提到，若想改變整個環境需有大量資金的投注。且認證標準不一、品質良莠不齊、風險管理都是現行體制下需要努力的方向。而他也認為在動保入憲後能改善現況，有助他持續推廣動物福利的理念。</p>
             <p>然而，目前對於動保入憲後的配套措施尚無完美的解方。以動保界的立場來說，動物保護入憲只是一個開端、一種手段，如何讓消費者從一隻雞、一顆蛋開始關注動物福利，喚起他們對於珍惜食物、環境議題的意識，也是民間團體追求的終極目標。</p>
             </span> 
         </div>
@@ -457,24 +454,20 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="customScripts.js"></script>
     <script>
-        $(function () {
-        var winh = $(window).height();
-
-        $(window).scroll(function () {
-            //.each代表每一個物件都要套用那個效果
-            $(".slideanimate").each(function () {
-                var scrolled = $(window).scrollTop();
-                //可以用this來代表「當下」取得的那個物件的位置
-                var objpos = $(this).offset().top;
-                if (objpos < scrolled + winh * 0.8) {
-                    //這邊記得也要用this代表當下的那個物件
-                    $(this).addClass("slide");
-                }
-            });
-        });
-    });
-    </script>
+      
+    ScrollTrigger.create({
+      trigger: '.bg',
+      start: 'top top',
+      endTrigger: '.img-wrapper',
+      end: 'bottom bottom',
+      pin: true,
+      })
     
+    
+    </script>   
   </body>
 </html>
