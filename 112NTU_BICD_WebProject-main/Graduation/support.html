@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="">
+    
+        <title>Support</title>
+         <!-- Custom Fonts -->
+         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" type="text/css">
+         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+         <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+         <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+         <!-- Custom CSS -->
+         <link href="css/bootstrap_styles.css" rel="stylesheet">
+     
+      </head>
+
+    <body id="page-top" data-spy="scroll" data-target="#navbarResponsive">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav" style="width: 100%;">
+            <div class="container ">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">日常不日常</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon dark"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive" style="text-align: right;">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0" style="text-shadow: 0px 0px 3px rgba(40, 40, 40, 0.5)">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger " href="index.html">回首頁</a>
+                        </li>
+    
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="donate.html">募資平台</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="activity_information.html">活動資訊</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="About_us.html">關於我們</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#page-top">贊助廠商</a></li>
+    
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </body>
+
+
+    <script>
+        $(function() {
+            $(window).scroll(function() {
+                var winh = $(window).height();
+                var scrolled = $(window).scrollTop();
+                $("#mainNav").each(function() {
+                    var objpos = $(this).offset().top;
+                    if (scrolled > winh * 0.3) {
+                        $(this).addClass("navbar-scrolled");
+                        $(this).addClass("navbar-light");
+                        $(this).removeClass("navbar-dark");
+                    } else {
+                        $(this).removeClass("navbar-scrolled");
+                        $(this).addClass("navbar-dark");
+                        $(this).removeClass("navbar-light");
+                    }
+    
+                });
+            });
+        });
+    </script>
+</html>
