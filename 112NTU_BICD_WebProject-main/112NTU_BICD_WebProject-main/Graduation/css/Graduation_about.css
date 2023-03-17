@@ -1,0 +1,99 @@
+
+
+.banner img{
+    width: 100%;
+}
+
+.cardicon {
+    transform-style: preserve-3d;
+    margin-top: 50px !important;
+}
+
+/* .masthead {
+    background-image: url("assets/box.png");
+    background-color: rgba(27, 28, 30, .9);
+} */
+
+.tab a {
+    background-color: #e6e6e6;
+}
+
+.tab a:hover {
+    background-color: #ccb800;
+}
+
+.tab a.active {
+    background-color: #ffe500;
+}
+
+.tabcontent {
+    display: none;
+    position: absolute;
+    top: 48%;
+}
+
+.tabcontent p {
+    width: 75%;
+
+}
+
+
+
+@media (max-width:998px) {
+    header h1 {
+        top: 20% !important;
+    }
+
+    .tabcontent {
+        top: 35% !important;
+    }
+
+    #bear {
+        top: 70% !important;
+        right: 2% !important;
+    }
+
+}
+
+@media (max-width:525px) {
+    header h1 {
+        top: 15% !important;
+    }
+
+    .tabcontent {
+        top: 28% !important;
+    }
+
+    .tabcontent h3 {
+        font-size: 16pt;
+    }
+
+    .tabcontent p {
+        font-size: 11pt;
+    }
+    
+            #bear {
+    top: 80% !important;
+    right: 2% !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 我打的 */
+.acttivity_intro{
+    margin: 30%;
+}
