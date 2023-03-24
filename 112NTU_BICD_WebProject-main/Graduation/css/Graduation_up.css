@@ -4,7 +4,7 @@ body {
   }
   .wrapper {
     height: 100vh;
-    background-image: url(https://yuchingchien.github.io/assets/UPbanner.png);
+    background-image:url("https://yuchingchien.github.io/assets/UPbanner.png");
     background-size: cover;
     position: relative;
     overflow: hidden;
@@ -21,4 +21,16 @@ body {
   
 #sect2{
     background-image: url(https://yuchingchien.github.io/assets/sect2bg.png);
+    background-attachment: fixed;
+}
+
+#sect3{
+  background-image: url(https://yuchingchien.github.io/assets/sect2bg.png);
+    background-attachment: fixed;
+
+}
+
+.word{
+  margin-left: 25%;
+  margin-right: 25%;
 }

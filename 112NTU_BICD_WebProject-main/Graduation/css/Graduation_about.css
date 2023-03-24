@@ -79,21 +79,86 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 我打的 */
-.acttivity_intro{
-    margin: 30%;
+#cardbg1{
+    background-image: url();
+    background-repeat: no-repeat;
+    font-size: 40px;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
 }
+
+
+  
+
+.box{
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+    height:100vh;
+    perspective:1000px;
+    flex-wrap: wrap;
+}
+
+
+
+
+.card-container{
+    position:relative;
+    width:200px;
+    height:250px;
+}
+
+.card-container .cover,
+.card-container .back{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    border-radius:.6rem;
+    box-shadow:0 .2rem .5rem rgba(0,0,0,.18);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    font-size:18px;
+    backface-visibility:hidden;
+    transition:transform 1s ease-in-out;
+    background-color: whitesmoke;
+}
+
+.card-container .cover{
+    background-color: whitesmoke;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: 寬度 高度 */
+    background-size: auto;
+    transform:rotatey(0deg);
+    }
+    .card-container:hover .cover{
+    transform:rotateY(180deg)
+    }
+    .card-container .back{
+    transform:rotatey(-180deg);
+    }
+    .card-container:hover .back{
+    transform:rotateY(0deg);
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+

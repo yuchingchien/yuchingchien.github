@@ -18,6 +18,105 @@
          <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
          <!-- Custom CSS -->
          <link href="css/bootstrap_styles.css" rel="stylesheet">
+         <style>
+            body {
+              font-family: 'Helvetica Neue', Helvetica, Arial;
+              line-height: 20px;
+              font-weight: 400; 
+              color: #3b3b3b;
+              /* -webkit-font-smoothing: antialiased; */
+              /* font-smoothing: antialiased; */
+              background:#000000;
+              overflow-x: hidden;
+            }
+          
+            @media screen and (max-width: 580px) {
+              body {
+                font-size: 16px;
+                line-height: 22px;
+              }
+            }
+          
+            .wrapper {
+              margin: 0 auto;
+              padding: 80px;
+              max-width: 1200px; /* 調整table寬度 */
+            }
+          
+            .table {
+              margin: 40px 0px 100px 0px;
+              width: 100%;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+              display: table;
+              
+            }
+          
+            @media screen and (max-width: 580px) {
+              .table {
+                display: block;
+              }
+            }
+          
+            .row {
+              display: table-row;
+              background: #f6f6f6;
+            }
+          
+            .row:nth-of-type(odd) {
+              background: #e9e9e9;
+            }
+          
+            .row.header {
+              font-weight: 900;
+              color: black;
+              background: #FFE550;
+            }
+          
+            @media screen and (max-width: 580px) {
+              .row {
+                padding: 14px 0 7px;
+                display: block;
+              }
+          
+              .row.header {
+                padding: 0;
+                height: 6px;
+              }
+          
+              .row.header .cell {
+                display: none;
+              }
+          
+              .cell {
+                margin-bottom: 10px;
+              }
+          
+              .cell:before {
+                margin-bottom: 3px;
+                content: attr(data-title);
+                min-width: 98px;
+                font-size: 10px;
+                line-height: 10px;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #969696;
+                display: block;
+              }
+            }
+          
+            .cell {
+              padding: 6px 12px;
+              display: table-cell;
+            }
+          
+            @media screen and (max-width: 580px) {
+              .cell {
+                padding: 2px 16px;
+                display: block;
+              }
+            }
+          </style>
+          
      
       </head>
 
@@ -31,6 +130,9 @@
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger " href="index.html">回首頁</a>
                         </li>
+                    </li><li class="nav-item">
+                        <a class="nav-link js-scroll-trigger " href="index.html#projects">專案一覽</a>
+                    </li>
     
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="donate.html">募資平台</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="activity_information.html">活動資訊</a></li>
@@ -41,28 +143,138 @@
                 </div>
             </div>
         </nav>
-    </body>
 
-
-    <script>
-        $(function() {
-            $(window).scroll(function() {
-                var winh = $(window).height();
-                var scrolled = $(window).scrollTop();
-                $("#mainNav").each(function() {
-                    var objpos = $(this).offset().top;
-                    if (scrolled > winh * 0.3) {
-                        $(this).addClass("navbar-scrolled");
-                        $(this).addClass("navbar-light");
-                        $(this).removeClass("navbar-dark");
-                    } else {
-                        $(this).removeClass("navbar-scrolled");
-                        $(this).addClass("navbar-dark");
-                        $(this).removeClass("navbar-light");
-                    }
+        <!-- table -->
+       
+        <div class="wrapper">
+            <h1 style="color: #FFE550;text-align: center;">恆器酒廠</h1>
+  
+            <div class="table">
+              
+              <div class="row header">
+                <div class="cell">
+                
+                </div>
+                <div class="cell">
+                  品牌理念
+                </div>
+                <div class="cell">
+                  特色產品
+                </div>
+                <div class="cell">
+                  店舖資訊
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="cell" data-title="">
+                    
+                </div>
+                <div class="cell" data-title="品牌理念">
+                    <p>恆器就是台語的番薯(韓吉)，是一間專門以台灣地瓜為主要原料的酒廠，<br>
+                        現階段的產品都是以台農57號黃皮黃肉的地瓜生產而成。</p>
+                    <p>除了字面上的意義之外「恆器更代表了品質」，不添加香料、食用酒精，100%取自於蒸餾器的蒸餾酒，</p>
+                    <p>每一滴每一瓶都是珍貴香醇的原酒，讓您喝的安心，買的放心。</p>
+                </div>
+                <div class="cell" data-title="特色產品">
+                    <p>"四十度的地瓜原酒，恆器地瓜原酒40度是蒸餾的酒心段，酒精度適中，口感相對輕柔。</p>
+                    <p>香氣是迷人討喜的糖蜜地瓜、烤地瓜的香甜氣息，非常適合搭配甜點一起飲用。</p>
+                    <p>  原酒系列都是不加任何一滴水的作品，再加上油脂豐富，酒液呈現自然的淡淡的白色，
+                        由於甜感的聯想較強，很適合拿來製作甜品及烘焙。一樣適合純飲、加冰塊、加水或是凍飲的方式。"</p>
+                </div>
+                <div class="cell" data-title="官網">
+                    <a href="http://www.hc-distillery.com.tw/index.html " style="color:grey;">點選進入官網</a>
+                    
+                </div>
+              </div>
+             
+            </div>
+            
+        
     
-                });
+
+        </div>
+   
+    
+            
+<!-- Footer --><footer class="footer text-center" style="height: 220px; background-color: #1b1c1e;">
+    <div class="container">
+        <ul class="list-inline mb-4">
+            <li class="list-inline-item">
+                <a class="social-link rounded-circle text-white mr-3 socialbtm" href="https://www.facebook.com/NTUBICD.GPExpo" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <div class="footercap">Facebook</div>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="social-link rounded-circle text-white mr-3 socialbtm" href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    <div class="footercap">回到首頁</div>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a class="social-link rounded-circle text-white socialbtm" href="https://instagram.com/ntubicd.expo?igshid=YmMyMTA2M2Y=" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    <div class="footercap">Instagram</div>
+                </a>
+            </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; NTU BICD 2023</p>
+    </div>
+</footer>
+
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fa-solid fa-circle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="js/popper.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            var winh = $(window).height();
+            var scrolled = $(window).scrollTop();
+            $("#mainNav").each(function() {
+                var objpos = $(this).offset().top;
+                if (scrolled > winh * 0.3) {
+                    $(this).addClass("navbar-scrolled");
+                    $(this).addClass("navbar-light");
+                    $(this).removeClass("navbar-dark");
+                } else {
+                    $(this).removeClass("navbar-scrolled");
+                    $(this).addClass("navbar-dark");
+                    $(this).removeClass("navbar-light");
+                }
+
             });
         });
-    </script>
+    });
+</script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
+

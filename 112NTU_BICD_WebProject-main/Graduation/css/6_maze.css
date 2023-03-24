@@ -1,0 +1,15 @@
+
+
+.banner{
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-img{
+    width: 10%;
+}
